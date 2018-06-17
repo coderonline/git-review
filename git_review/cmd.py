@@ -1207,6 +1207,7 @@ def fetch_review(review, masterbranch, remote, project):
     try:
         if patchset_number is None:
             refspec = review_info['currentPatchSet']['ref']
+            patchset_number = review_info['currentPatchSet']['number']
         else:
             refspec = [ps for ps in review_info['patchSets']
                        if ps['number'] == patchset_number][0]['ref']
